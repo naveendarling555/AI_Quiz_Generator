@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">Q</div>
+            <div>
+                <h1>QuizForge AI</h1>
+                <p>AI & NLP Quiz Generator</p>
+            </div>
+        </div>
+        <div class="status"><span></span> NLP Engine Ready</div>
+    </header>
+
+    <main class="main-grid">
+        <section class="card input-card">
+            <div class="section-title">
+                <div>
+                    <h2>Build your quiz</h2>
+                    <p>Paste educational content and let the NLP engine create questions.</p>
+                </div>
+                <span class="badge">No Database</span>
+            </div>
+
+            <label for="content">Educational content</label>
+            <textarea id="content" placeholder="Example: Artificial intelligence is a field of computer science. Machine learning is a subset of artificial intelligence that enables systems to learn from data. NLP refers to methods that allow computers to process human language."></textarea>
+
+            <div class="sample-row">
+                <button id="sampleBtn" class="secondary">Load sample content</button>
+                <span id="charCount">0 characters</span>
+            </div>
+
+            <div class="controls">
+                <div>
+                    <label for="count">Questions</label>
+                    <select id="count">
+                        <option>5</option>
+                        <option selected>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty">
+                        <option value="mixed" selected>Mixed</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="types">
+                <label>Question types</label>
+                <div class="check-grid">
+                    <label class="check"><input type="checkbox" value="mcq" checked> MCQ</label>
+                    <label class="check"><input type="checkbox" value="true_false" checked> True / False</label>
+                    <label class="check"><input type="checkbox" value="fill_blank" checked> Fill Blank</label>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="primary">Generate AI Quiz <span>→</span></button>
+            <div id="message" class="message hidden"></div>
+        </section>
+
+        <aside class="card insight-card">
+            <div class="insight-icon">✦</div>
+            <h2>NLP pipeline</h2>
+            <div class="pipeline">
+                <div><b>01</b><span>Text cleaning</span></div>
+                <div><b>02</b><span>Sentence & keyword extraction</span></div>
+                <div><b>03</b><span>Concept identification</span></div>
+                <div><b>04</b><span>Question generation</span></div>
+                <div><b>05</b><span>Evaluation & analytics</span></div>
+            </div>
+            <div class="tech-tags">
+                <span>Python</span><span>NLTK</span><span>spaCy</span><span>TF-IDF</span><span>Flask</span>
+            </div>
+        </aside>
+    </main>
+
+    <section id="quizSection" class="card quiz-card hidden">
+        <div class="quiz-head">
+            <div>
+                <span class="eyebrow">GENERATED ASSESSMENT</span>
+                <h2>AI Generated Quiz</h2>
+            </div>
+            <div class="quiz-actions">
+                <button id="exportBtn" class="secondary">Export JSON</button>
+            </div>
+        </div>
+        <div id="analysis" class="analysis"></div>
+        <form id="quizForm"></form>
+        <button id="submitBtn" class="primary submit">Submit Quiz</button>
+        <div id="result" class="result hidden"></div>
+    </section>
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

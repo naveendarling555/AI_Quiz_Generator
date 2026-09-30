@@ -1,0 +1,10 @@
+Artificial intelligence is a field of computer science.
+Machine learning is a subset of artificial intelligence that enables systems to learn from data.
+Natural language processing is a branch of artificial intelligence that helps computers process human language.
+Tokenization is the process of breaking text into smaller units called tokens.
+A stop word is a common word that may be removed during text preprocessing.
+TF-IDF is a statistical technique used to estimate the importance of words in documents.
+A Flask application is a Python web application that can expose routes and return web pages.
+Information retrieval refers to finding relevant information from a collection of documents.
+Question generation is the process of creating assessment questions from source content.
+A distractor is an incorrect answer option designed to be plausible.
